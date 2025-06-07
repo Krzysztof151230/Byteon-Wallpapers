@@ -37,7 +37,7 @@
                     <b data-translate="FOR FREE!" style="margin: 0; padding: 0;">FOR FREE!</b>
                 </h1>
                 <p class="animate__animated animate__fadeInDown" style="text-align: center; color: #29004196; opacity: 50%; font-size: 24px; margin-top: 20px;" data-translate="You can download wallpapers for your desktop or mobile devices. 100% FREE.">You can download wallpapers for your desktop or mobile devices. 100% FREE.</p>
-                <p class="animate__animated animate__fadeInDown" style="text-align: center; color: #2900416c; opacity: 50%; font-size: 20px; margin-top: 20px;"><b>NOTE: </b><span data-translate="Dark Mode is not that good enough, so use Light Mode. Translate mode aswell.">Dark Mode is not that good enough, so use Light Mode. Translate mode aswell.</span></p>
+                <p class="animate__animated animate__fadeInDown" style="text-align: center; color: #2900416c; opacity: 50%; font-size: 20px; margin-top: 20px;"><b>NOTE: </b><span data-translate="Dark Mode is not that good enough, so use Light Mode. Translate mode aswell.">Dark Mode is not that good enough, so use Light Mode.</span></p>
                 <button class="btn-1 animate__animated animate__fadeInDown" style="margin-top: 30px; margin-bottom: 30px; padding: 20px;">
                     <a class="animate__animated animate__fadeInDown" style="text-align: center; color: rgb(255, 255, 255); opacity: 20%; font-size: 20px;" href="#guide" data-translate='Click to scroll down to the "download" guide.'>Click to scroll down to the "download" guide.</a>
                 </button>
@@ -994,6 +994,271 @@
         }
     }
     updateAuthUI();
+
+    // Image Zoom Modal with Enhanced Zoom Controls UI
+    const zoomModal = document.createElement("div");
+    zoomModal.style.position = "fixed";
+    zoomModal.style.top = "0";
+    zoomModal.style.left = "0";
+    zoomModal.style.width = "100vw";
+    zoomModal.style.height = "100vh";
+    zoomModal.style.background = "rgba(0,0,0,0.88)";
+    zoomModal.style.display = "none";
+    zoomModal.style.justifyContent = "center";
+    zoomModal.style.alignItems = "center";
+    zoomModal.style.zIndex = "3000";
+    zoomModal.innerHTML = `
+        <div style="position:relative;display:flex;flex-direction:column;align-items:center;width:100vw;height:100vh;">
+            <button id="closeZoomModal" style="position:absolute;top:32px;right:48px;background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:40px;cursor:pointer;z-index:2;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;">&times;</button>
+            <div style="flex:1;display:flex;align-items:center;justify-content:center;width:100%;height:100%;">
+                <img id="zoomedImg" src="" alt="Zoomed Wallpaper" style="max-width:90vw;max-height:80vh;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.4);transition:transform 0.2s; background:#fff;object-fit:contain;">
+            </div>
+            <div id="zoomControls" style="width:100%;display:flex;justify-content:center;align-items:center;gap:12px;padding:18px 0 32px 0;background:rgba(30,20,60,0.85);border-radius:0 0 18px 18px;box-shadow:0 -2px 16px rgba(0,0,0,0.18);position:relative;z-index:1;">
+                <button id="zoomInBtn" title="Zoom In" style="padding:10px 18px;font-size:22px;border-radius:6px;border:none;background:#6e16da;color:#fff;cursor:pointer;transition:background 0.2s;">+</button>
+                <button id="zoomOutBtn" title="Zoom Out" style="padding:10px 18px;font-size:22px;border-radius:6px;border:none;background:#6e16da;color:#fff;cursor:pointer;transition:background 0.2s;">-</button>
+                <button id="resetZoomBtn" title="Reset Zoom" style="padding:10px 18px;font-size:18px;border-radius:6px;border:none;background:#6e16da;color:#fff;cursor:pointer;transition:background 0.2s;">Reset</button>
+                <button id="rotateBtn" title="Rotate 90°" style="padding:10px 18px;font-size:18px;border-radius:6px;border:none;background:#6e16da;color:#fff;cursor:pointer;transition:background 0.2s;">⟳</button>
+                <button id="flipHBtn" title="Flip Horizontal" style="padding:10px 18px;font-size:18px;border-radius:6px;border:none;background:#6e16da;color:#fff;cursor:pointer;transition:background 0.2s;">⇋</button>
+                <button id="flipVBtn" title="Flip Vertical" style="padding:10px 18px;font-size:18px;border-radius:6px;border:none;background:#6e16da;color:#fff;cursor:pointer;transition:background 0.2s;">⇵</button>
+                <button id="downloadBtn" title="Download Image" style="padding:10px 18px;font-size:18px;border-radius:6px;border:none;background:#6e16da;color:#fff;cursor:pointer;transition:background 0.2s;">⬇</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(zoomModal);
+
+    let currentZoom = 1;
+    let currentRotation = 0;
+    let flipH = 1;
+    let flipV = 1;
+    const minZoom = 1;
+    const maxZoom = 2.5;
+    const zoomStep = 0.1;
+
+    const zoomInBtn = zoomModal.querySelector("#zoomInBtn");
+    const zoomOutBtn = zoomModal.querySelector("#zoomOutBtn");
+
+    function updateZoomButtons() {
+        // Gray out + if at max, - if at min
+        if (currentZoom >= maxZoom) {
+            zoomInBtn.disabled = true;
+            zoomInBtn.style.opacity = "0.5";
+            zoomInBtn.style.cursor = "not-allowed";
+        } else {
+            zoomInBtn.disabled = false;
+            zoomInBtn.style.opacity = "";
+            zoomInBtn.style.cursor = "pointer";
+        }
+        if (currentZoom <= minZoom) {
+            zoomOutBtn.disabled = true;
+            zoomOutBtn.style.opacity = "0.5";
+            zoomOutBtn.style.cursor = "not-allowed";
+        } else {
+            zoomOutBtn.disabled = false;
+            zoomOutBtn.style.opacity = "";
+            zoomOutBtn.style.cursor = "pointer";
+        }
+    }
+
+    function updateTransform() {
+        const img = document.getElementById("zoomedImg");
+        img.style.transform = `scale(${currentZoom * flipH},${currentZoom * flipV}) rotate(${currentRotation}deg)`;
+        updateZoomButtons();
+    }
+
+    function setZoom(scale) {
+        currentZoom = Math.max(minZoom, Math.min(maxZoom, scale));
+        updateTransform();
+    }
+
+    function setRotation(deg) {
+        currentRotation = deg % 360;
+        updateTransform();
+    }
+
+    function setFlip(horizontal, vertical) {
+        flipH = horizontal;
+        flipV = vertical;
+        updateTransform();
+    }
+
+    function resetZoomModalState() {
+        currentZoom = 1;
+        currentRotation = 0;
+        flipH = 1;
+        flipV = 1;
+        updateTransform();
+    }
+
+    function showZoomModal(src, alt) {
+        const img = document.getElementById("zoomedImg");
+        img.src = src;
+        img.alt = alt || "";
+        resetZoomModalState();
+        zoomModal.style.display = "flex";
+    }
+
+    function hideZoomModal() {
+        zoomModal.style.display = "none";
+        document.getElementById("zoomedImg").src = "";
+    }
+
+    document.getElementById("closeZoomModal").onclick = hideZoomModal;
+    zoomModal.onclick = function(e) {
+        if (e.target === zoomModal) hideZoomModal();
+    };
+
+    zoomInBtn.onclick = function(e) {
+        e.stopPropagation();
+        setZoom(currentZoom + zoomStep);
+    };
+    zoomOutBtn.onclick = function(e) {
+        e.stopPropagation();
+        setZoom(currentZoom - zoomStep);
+    };
+    document.getElementById("resetZoomBtn").onclick = function(e) {
+        e.stopPropagation();
+        resetZoomModalState();
+    };
+    document.getElementById("rotateBtn").onclick = function(e) {
+        e.stopPropagation();
+        setRotation(currentRotation + 90);
+    };
+    document.getElementById("flipHBtn").onclick = function(e) {
+        e.stopPropagation();
+        setFlip(flipH * -1, flipV);
+    };
+    document.getElementById("flipVBtn").onclick = function(e) {
+        e.stopPropagation();
+        setFlip(flipH, flipV * -1);
+    };
+    document.getElementById("downloadBtn").onclick = function(e) {
+        e.stopPropagation();
+        const img = document.getElementById("zoomedImg");
+        const link = document.createElement("a");
+        link.href = img.src;
+        link.download = img.alt ? img.alt.replace(/\s+/g, "_") + ".jpg" : "wallpaper.jpg";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    // Keyboard shortcuts for zoom modal
+    zoomModal.addEventListener("keydown", function(e) {
+        if (zoomModal.style.display !== "flex") return;
+        if (e.key === "Escape") hideZoomModal();
+        if (e.key === "+" || e.key === "=") setZoom(currentZoom + zoomStep);
+        if (e.key === "-") setZoom(currentZoom - zoomStep);
+        if (e.key === "0") resetZoomModalState();
+        if (e.key === "r" || e.key === "R") setRotation(currentRotation + 90);
+        if (e.key === "h" || e.key === "H") setFlip(flipH * -1, flipV);
+        if (e.key === "v" || e.key === "V") setFlip(flipH, flipV * -1);
+        if (e.key === "d" || e.key === "D") document.getElementById("downloadBtn").click();
+    });
+
+    // Focus modal for keyboard shortcuts
+    function focusZoomModal() {
+        zoomModal.setAttribute("tabindex", "-1");
+        zoomModal.focus();
+    }
+
+    document.querySelectorAll(".wallpapers img").forEach(img => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", function() {
+            showZoomModal(this.src, this.alt);
+            setTimeout(focusZoomModal, 100);
+        });
+    });
+
+    document.querySelectorAll(".wallpapers img").forEach(img => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", function() {
+            showZoomModal(this.src, this.alt);
+            setTimeout(focusZoomModal, 100);
+        });
+    });
+
+    // --- Add pan/move support for zoomed image ---
+    (function enablePanOnZoomedImg() {
+        const img = document.getElementById("zoomedImg");
+        let isPanning = false;
+        let startX = 0, startY = 0;
+        let lastX = 0, lastY = 0;
+
+        function setPan(x, y) {
+            img.style.transform = `scale(${currentZoom * flipH},${currentZoom * flipV}) rotate(${currentRotation}deg) translate(${x}px,${y}px)`;
+            updateZoomButtons();
+        }
+
+        function resetPan() {
+            lastX = 0;
+            lastY = 0;
+            setPan(0, 0);
+        }
+
+        // Update transform to include pan
+        function updateTransformWithPan() {
+            img.style.transform = `scale(${currentZoom * flipH},${currentZoom * flipV}) rotate(${currentRotation}deg) translate(${lastX}px,${lastY}px)`;
+            updateZoomButtons();
+        }
+
+        // Patch updateTransform to include pan
+        const origUpdateTransform = updateTransform;
+        updateTransform = function() {
+            updateTransformWithPan();
+        };
+
+        // Reset pan on modal open/reset
+        const origResetZoomModalState = resetZoomModalState;
+        resetZoomModalState = function() {
+            origResetZoomModalState();
+            resetPan();
+        };
+
+        // Mouse events
+        img.addEventListener("mousedown", function(e) {
+            if (currentZoom === 1) return;
+            isPanning = true;
+            startX = e.clientX - lastX;
+            startY = e.clientY - lastY;
+            img.style.cursor = "grab";
+            e.preventDefault();
+        });
+        document.addEventListener("mousemove", function(e) {
+            if (!isPanning) return;
+            lastX = e.clientX - startX;
+            lastY = e.clientY - startY;
+            setPan(lastX, lastY);
+        });
+        document.addEventListener("mouseup", function() {
+            isPanning = false;
+            img.style.cursor = currentZoom > 1 ? "grab" : "zoom-in";
+        });
+
+        // Touch events for mobile
+        img.addEventListener("touchstart", function(e) {
+            if (currentZoom === 1) return;
+            if (e.touches.length === 1) {
+                isPanning = true;
+                startX = e.touches[0].clientX - lastX;
+                startY = e.touches[0].clientY - lastY;
+            }
+        });
+        img.addEventListener("touchmove", function(e) {
+            if (!isPanning || e.touches.length !== 1) return;
+            lastX = e.touches[0].clientX - startX;
+            lastY = e.touches[0].clientY - startY;
+            setPan(lastX, lastY);
+            e.preventDefault();
+        }, { passive: false });
+        img.addEventListener("touchend", function() {
+            isPanning = false;
+        });
+
+        // Reset pan when zoom is reset or image is changed
+        zoomModal.addEventListener("click", function(e) {
+            if (e.target === document.getElementById("resetZoomBtn")) resetPan();
+        });
+    })();
 </script>
 
 </html>
