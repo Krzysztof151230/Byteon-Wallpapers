@@ -142,7 +142,7 @@
         </div>
     </div>
     <div class="footer">
-        <b>Current version: 1.105-BETA2</b>
+        <b>Current version: 1.105</b>
         <br style="margin: 5px;">
         Made with ❤️ by Byteon Team
     </div>
@@ -1143,256 +1143,25 @@
         };
     });
 
-    (function mobileEnhance() {
-        function isPhone() {
-            return /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-                && window.innerWidth <= 900;
-        }
-        function enhanceForPhone() {
-            // Make wallpapers single column
-            const wallpapers = document.querySelector('.wallpapers');
-            if (wallpapers) {
-                wallpapers.style.flexDirection = 'column';
-                wallpapers.style.alignItems = 'center';
-            }
-            // Make .thm cards full width
-            document.querySelectorAll('.wallpapers .thm').forEach(card => {
-                card.style.maxWidth = '98vw';
-                card.style.width = '98vw';
-                card.style.margin = '10px 0';
-                card.style.padding = '18px 4vw';
-            });
-            // Reduce header/logo size
-            const logo = document.querySelector('.logo');
-            if (logo) logo.style.height = '36px';
-            document.querySelectorAll('header img').forEach(img => img.style.width = '90px');
-            // Reduce h1/h2 font size
-            document.querySelectorAll('h1').forEach(h => h.style.fontSize = '2rem');
-            document.querySelectorAll('h2').forEach(h => h.style.fontSize = '1.4rem');
-            // Reduce .motd size
-            const motd = document.querySelector('.motd');
-            if (motd) {
-                motd.style.padding = '12px 8px';
-                motd.style.fontSize = '1rem';
-                motd.style.maxWidth = '98vw';
-            }
-            // Reduce guide/donate-us padding
-            document.querySelectorAll('.guide, .donate-us').forEach(el => {
-                el.style.padding = '18px 4vw';
-                el.style.maxWidth = '98vw';
-            });
-            // Footer: smaller padding
-            const footer = document.querySelector('.footer');
-            if (footer) footer.style.padding = '10px';
-            // Search bar: full width
-            const searchBar = document.querySelector('input[placeholder="Search wallpapers..."]');
-            if (searchBar) searchBar.style.width = '90vw';
-            // Zoom modal: make controls vertical
-            const zoomControls = document.getElementById('zoomControls');
-            if (zoomControls) {
-                zoomControls.style.flexDirection = 'column';
-                zoomControls.style.gap = '8px';
-                zoomControls.style.padding = '12px 0 18px 0';
-            }
-            // Make buttons larger for touch
-            document.querySelectorAll('button').forEach(btn => {
-                btn.style.fontSize = '1.1rem';
-                btn.style.padding = '14px 0';
-                btn.style.minWidth = '120px';
-            });
-            // Prevent zoom modal overflow
-            const zoomedImg = document.getElementById('zoomedImg');
-            if (zoomedImg) {
-                zoomedImg.style.maxWidth = '98vw';
-                zoomedImg.style.maxHeight = '60vh';
-            }
-            // Hide hover-only effects
-            const style = document.createElement('style');
-            style.textContent = `
-                .wallpapers .thm:hover, .new:hover { transform: none !important; box-shadow: 0 4px 8px rgba(132,0,255,0.2) !important; }
-                .sss:hover { font-size: inherit !important; color: #da1616 !important; }
-            `;
-            document.head.appendChild(style);
-            // Add a friendly mobile welcome banner with more interactivity and persistence
-            if (!document.getElementById('mobileWelcomeBanner')) {
-                // Check if user has dismissed the banner before (persist in localStorage)
-                if (!localStorage.getItem('hideMobileBanner')) {
-                    const banner = document.createElement('div');
-                    banner.id = 'mobileWelcomeBanner';
-                    banner.innerHTML = `
-                        <div style="background:#6e16da;color:#fff;padding:14px 18px;border-radius:10px;margin:18px 8px 0 8px;display:flex;align-items:center;gap:12px;font-size:1.1rem;box-shadow:0 2px 12px rgba(132,0,255,0.13);position:relative;">
-                            <span style="font-size:1.6rem;animation:bounce 1.2s infinite alternate;">📱</span>
-                            <span>
-                                <b>Welcome to Byteon Wallpapers on mobile!</b><br>
-                                Enjoy a touch-friendly, easy-to-use experience.<br>
-                                <b>Tip:</b> Tap any wallpaper to preview and zoom.<br>
-                                <span id="mobileBannerTime" style="font-size:0.95rem;opacity:0.8;"></span>
-                            </span>
-                            <button id="closeMobileBanner" style="margin-left:auto;background:rgba(255,255,255,0.18);color:#fff;border:none;border-radius:6px;padding:4px 12px;font-size:1.2rem;cursor:pointer;">&times;</button>
-                        </div>
-                    `;
-                    banner.style.position = 'sticky';
-                    banner.style.top = '0';
-                    banner.style.zIndex = '1001';
-                    document.body.insertBefore(banner, document.body.firstChild);
-
-                    // Add animation keyframes for bounce
-                    const style = document.createElement('style');
-                    style.textContent = `
-                        @keyframes bounce {
-                            0% { transform: translateY(0);}
-                            100% { transform: translateY(-8px);}
-                        }
-                    `;
-                    document.head.appendChild(style);
-
-                    // Show current time in the banner, update every second
-                    function updateBannerTime() {
-                        const now = new Date();
-                        const timeStr = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-                        const dateStr = now.toLocaleDateString();
-                        const el = document.getElementById('mobileBannerTime');
-                        if (el) el.textContent = `Today is ${dateStr}, ${timeStr}`;
-                    }
-                    updateBannerTime();
-                    setInterval(updateBannerTime, 1000);
-
-                    // Dismiss button
-                    document.getElementById('closeMobileBanner').onclick = function() {
-                        banner.style.opacity = '0';
-                        setTimeout(() => {
-                            banner.style.display = 'none';
-                        }, 400);
-                        localStorage.setItem('hideMobileBanner', '1');
-                    };
-
-                    // Add a "Don't show again" checkbox
-                    const dontShowDiv = document.createElement('div');
-                    dontShowDiv.style.cssText = "position:absolute;bottom:4px;right:18px;font-size:0.95rem;opacity:0.8;";
-                    dontShowDiv.innerHTML = `
-                        <label style="cursor:pointer;">
-                            <input type="checkbox" id="dontShowMobileBanner" style="vertical-align:middle;margin-right:4px;">
-                            Don't show again
-                        </label>
-                    `;
-                    banner.querySelector('div').appendChild(dontShowDiv);
-                    document.getElementById('dontShowMobileBanner').onchange = function() {
-                        if (this.checked) {
-                            localStorage.setItem('hideMobileBanner', '1');
-                        } else {
-                            localStorage.removeItem('hideMobileBanner');
-                        }
-                    };
-                }
-            }
-
-            // Add a floating quick-help button for mobile users
-            if (!document.getElementById('mobileHelpBtn')) {
-                const helpBtn = document.createElement('button');
-                helpBtn.id = 'mobileHelpBtn';
-                helpBtn.innerHTML = '❓';
-                helpBtn.title = 'Quick Help';
-                helpBtn.style.cssText = `
-                    position:fixed;bottom:80px;right:18px;z-index:1002;
-                    background:#6e16da;color:#fff;border:none;border-radius:50%;
-                    width:54px;height:54px;font-size:2rem;box-shadow:0 2px 12px rgba(132,0,255,0.18);
-                    display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.2s;
-                `;
-                helpBtn.onmouseenter = () => helpBtn.style.background = '#a00aff';
-                helpBtn.onmouseleave = () => helpBtn.style.background = '#6e16da';
-                document.body.appendChild(helpBtn);
-
-                // Floating help modal
-                let helpModal = null;
-                helpBtn.onclick = function() {
-                    if (helpModal) {
-                        helpModal.style.display = 'flex';
-                        return;
-                    }
-                    helpModal = document.createElement('div');
-                    helpModal.id = 'mobileHelpModal';
-                    helpModal.style.cssText = `
-                        position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:2002;
-                        background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;
-                    `;
-                    helpModal.innerHTML = `
-                        <div style="background:#fff;color:#222;border-radius:14px;padding:28px 18px;max-width:90vw;box-shadow:0 8px 32px rgba(0,0,0,0.18);position:relative;">
-                            <button id="closeMobileHelpModal" style="position:absolute;top:10px;right:10px;background:none;border:none;font-size:2rem;cursor:pointer;">&times;</button>
-                            <h2 style="color:#6e16da;font-size:1.5rem;margin-bottom:12px;">Mobile Quick Help</h2>
-                            <ul style="font-size:1.1rem;line-height:1.7;">
-                                <li><b>Tap</b> a wallpaper to preview and zoom.</li>
-                                <li><b>Pinch</b> to zoom in/out in preview.</li>
-                                <li><b>Drag</b> to pan when zoomed in.</li>
-                                <li><b>Use buttons</b> below the preview for rotate, flip, or download.</li>
-                                <li><b>Search</b> bar helps you find wallpapers quickly.</li>
-                                <li><b>Log In/Sign Up</b> for extra features (coming soon!).</li>
-                            </ul>
-                            <div style="margin-top:10px;text-align:center;">
-                                <button id="mobileHelpGotIt" style="background:#6e16da;color:#fff;border:none;border-radius:8px;padding:8px 22px;font-size:1.1rem;cursor:pointer;">Got it!</button>
-                            </div>
-                        </div>
-                    `;
-                    document.body.appendChild(helpModal);
-                    document.getElementById('closeMobileHelpModal').onclick = () => helpModal.style.display = 'none';
-                    document.getElementById('mobileHelpGotIt').onclick = () => helpModal.style.display = 'none';
-                };
-            }
-
-            // Add a swipe-down-to-refresh tip for mobile users (show once)
-            if (!localStorage.getItem('mobileSwipeTipShown')) {
-                const swipeTip = document.createElement('div');
-                swipeTip.id = 'mobileSwipeTip';
-                swipeTip.innerHTML = `
-                    <div style="background:#fff;color:#6e16da;padding:10px 18px;border-radius:8px;box-shadow:0 2px 12px rgba(132,0,255,0.10);font-size:1.05rem;display:flex;align-items:center;gap:10px;">
-                        <span style="font-size:1.5rem;">🔄</span>
-                        <span>Tip: Swipe down from the top to refresh the page.</span>
-                        <button id="closeSwipeTip" style="margin-left:auto;background:none;color:#6e16da;border:none;font-size:1.2rem;cursor:pointer;">&times;</button>
+    (function blockMobile() {
+        const isMobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+            || (window.innerWidth && window.innerWidth < 600);
+        if (isMobile) {
+            document.body.innerHTML = `
+                <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#f0e1ff;">
+                    <div style="max-width:480px;padding:40px 24px;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(132,0,255,0.12);text-align:center;">
+                        <h1 style="color:#da1616;font-size:2.2rem;margin-bottom:18px;">Sorry</h1>
+                        <p style="color:#461285;font-size:1.3rem;margin-bottom:18px;">
+                            but the website was closed for phone users, becuase of the UI issues.<br>
+                            If you have a PC, Mac or a tablet, you can enter the site.
+                        </p>
+                        <div style="color:#a00aff;font-size:1.1rem;font-weight:600;">Error code: 403</div>
                     </div>
-                `;
-                swipeTip.style.position = 'fixed';
-                swipeTip.style.top = '70px';
-                swipeTip.style.left = '50%';
-                swipeTip.style.transform = 'translateX(-50%)';
-                swipeTip.style.zIndex = '1003';
-                document.body.appendChild(swipeTip);
-                document.getElementById('closeSwipeTip').onclick = function() {
-                    swipeTip.style.opacity = '0';
-                    setTimeout(() => {
-                        swipeTip.remove();
-                    }, 400);
-                    localStorage.setItem('mobileSwipeTipShown', '1');
-                };
-                setTimeout(() => {
-                    if (swipeTip) {
-                        swipeTip.style.opacity = '0';
-                        setTimeout(() => swipeTip.remove(), 400);
-                        localStorage.setItem('mobileSwipeTipShown', '1');
-                    }
-                }, 9000);
-            }
-
-            // Add vibration feedback for certain actions (if supported)
-            function vibrate(ms) {
-                if (navigator.vibrate) navigator.vibrate(ms);
-            }
-            // Vibrate on wallpaper tap (zoom preview)
-            document.querySelectorAll('.wallpapers img').forEach(img => {
-                img.addEventListener('touchstart', function() {
-                    vibrate(18);
-                });
-            });
-            // Vibrate on help button
-            const helpBtn = document.getElementById('mobileHelpBtn');
-            if (helpBtn) {
-                helpBtn.addEventListener('touchstart', () => vibrate(12));
-            }
-            // Vibrate on banner close
-            const closeBanner = document.getElementById('closeMobileBanner');
-            if (closeBanner) {
-                closeBanner.addEventListener('touchstart', () => vibrate(10));
-            }
+                </div>
+            `;
+            document.documentElement.style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
         }
-        if (isPhone()) enhanceForPhone();
     })();
 </script>
 
