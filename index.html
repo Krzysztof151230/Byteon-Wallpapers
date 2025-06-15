@@ -142,7 +142,7 @@
         </div>
     </div>
     <div class="footer">
-        <b>Current version: 1.100</b>
+        <b>Current version: 1.105-BETA</b>
         <br style="margin: 5px;">
         Made with ❤️ by Byteon Team
     </div>
@@ -1142,6 +1142,80 @@
             shown = !shown;
         };
     });
+
+    (function mobileEnhance() {
+        function isPhone() {
+            return /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+                && window.innerWidth <= 900;
+        }
+        function enhanceForPhone() {
+            // Make wallpapers single column
+            const wallpapers = document.querySelector('.wallpapers');
+            if (wallpapers) {
+                wallpapers.style.flexDirection = 'column';
+                wallpapers.style.alignItems = 'center';
+            }
+            // Make .thm cards full width
+            document.querySelectorAll('.wallpapers .thm').forEach(card => {
+                card.style.maxWidth = '98vw';
+                card.style.width = '98vw';
+                card.style.margin = '10px 0';
+                card.style.padding = '18px 4vw';
+            });
+            // Reduce header/logo size
+            const logo = document.querySelector('.logo');
+            if (logo) logo.style.height = '36px';
+            document.querySelectorAll('header img').forEach(img => img.style.width = '90px');
+            // Reduce h1/h2 font size
+            document.querySelectorAll('h1').forEach(h => h.style.fontSize = '2rem');
+            document.querySelectorAll('h2').forEach(h => h.style.fontSize = '1.4rem');
+            // Reduce .motd size
+            const motd = document.querySelector('.motd');
+            if (motd) {
+                motd.style.padding = '12px 8px';
+                motd.style.fontSize = '1rem';
+                motd.style.maxWidth = '98vw';
+            }
+            // Reduce guide/donate-us padding
+            document.querySelectorAll('.guide, .donate-us').forEach(el => {
+                el.style.padding = '18px 4vw';
+                el.style.maxWidth = '98vw';
+            });
+            // Footer: smaller padding
+            const footer = document.querySelector('.footer');
+            if (footer) footer.style.padding = '10px';
+            // Search bar: full width
+            const searchBar = document.querySelector('input[placeholder="Search wallpapers..."]');
+            if (searchBar) searchBar.style.width = '90vw';
+            // Zoom modal: make controls vertical
+            const zoomControls = document.getElementById('zoomControls');
+            if (zoomControls) {
+                zoomControls.style.flexDirection = 'column';
+                zoomControls.style.gap = '8px';
+                zoomControls.style.padding = '12px 0 18px 0';
+            }
+            // Make buttons larger for touch
+            document.querySelectorAll('button').forEach(btn => {
+                btn.style.fontSize = '1.1rem';
+                btn.style.padding = '14px 0';
+                btn.style.minWidth = '120px';
+            });
+            // Prevent zoom modal overflow
+            const zoomedImg = document.getElementById('zoomedImg');
+            if (zoomedImg) {
+                zoomedImg.style.maxWidth = '98vw';
+                zoomedImg.style.maxHeight = '60vh';
+            }
+            // Hide hover-only effects
+            const style = document.createElement('style');
+            style.textContent = `
+                .wallpapers .thm:hover, .new:hover { transform: none !important; box-shadow: 0 4px 8px rgba(132,0,255,0.2) !important; }
+                .sss:hover { font-size: inherit !important; color: #da1616 !important; }
+            `;
+            document.head.appendChild(style);
+        }
+        if (isPhone()) enhanceForPhone();
+    })();
 </script>
 
 </html>
