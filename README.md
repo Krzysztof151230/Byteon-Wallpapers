@@ -1,6 +1,6 @@
 # Byteon-Wallpapers
 
-A simple, responsive web app showcasing a curated collection of free, high‑quality 4K wallpapers for desktop and mobile devices. Browse, preview, and download with one click!
+Browse, preview, and download with one click! Scroll to the bottom to enter the site.
 
 ---
 
@@ -33,4 +33,4 @@ A simple, responsive web app showcasing a curated collection of free, high‑qua
 
 ---
 
-## 🌐 **Live Demo:** https://krzysztof151230.github.io/Byteon-Wallpapers/
+- **Website:** https://krzysztof151230.github.io/Byteon-Wallpapers/
