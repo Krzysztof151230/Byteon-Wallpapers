@@ -11,7 +11,7 @@ Browse, preview, and download with one click! Scroll to the bottom to enter the 
 - **Live Preview & Zoom**: Inspect wallpapers before downloading  
 - **Easy Downloads**: Download via Google Drive in a single click  
 - **Search Bar**: Quickly find your favorite themes  
-- **“Message of the Day”** banner for release notes & announcements  
+- **“Message of the Day”** banner
 
 ---
 
