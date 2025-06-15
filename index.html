@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Byteon Wallpapers | Get our wallpapers for free!</title>
+    <title>Byteon | Get our wallpapers for free!</title>
     <meta name="description" content="Download high-quality 4K wallpapers for desktop and mobile devices. 100% free from Byteon.">
     <meta name="keywords" content="wallpapers, 4K, free, desktop, mobile, Byteon, backgrounds, download">
     <meta name="author" content="Byteon Team">
@@ -27,7 +27,6 @@
                 <a href>
                     <img src="logo.png" alt="logo" class="logo" style="height: 50px;">
                 </a>
-                <p style="font-size: 12px; color: #4f356e; font-weight: 900; padding-top: 0%; margin: 0; align-self: start;">Wallpapers</p>
                 <hr>
                 <a href="https://www.youtube.com/@Byteon_Desktop" target="_blank"><i class="fa-brands fa-youtube" alt="Our Youtube Channel"></i></a>
                 <a href="https://discord.gg/ttAVC2Ex" target="_blank"><i class="fa-brands fa-discord" alt="Our Discord Channel"></i></a>
@@ -52,6 +51,7 @@
                     <b style="font-size: 1.4rem;">Message of the Day:</b><br><br><span style="font-size: 2rem;"><b> 🎉 Update 1.100</b> is live!</span> <br><br>
                     We’re excited to introduce the brand new <span style="color:#da1616;">ByteArc</span> wallpaper collection, featuring 6 various colors across 4 themes. <br><br>
                     This update also brings a smoother zoom and preview experience—now you can zoom wallpapers before downloading! <br><br>
+                    We've also added shortcuts for easy navigation, so you can quickly jump to the wallpapers (Ctrl + Alt + W), guide (Ctrl + Alt + G), donation (Ctrl + Alt + D) or search sections (Ctrl + Alt + F), or even hide/show the message of the day (Ctrl + Alt + H). Here are some shortcuts for zoom modals as well: "Esc" to hide zoom modal, "+" to zoom in, "-" to zoom out, "0" to reset zoom modal state, "R" to rotate 90 deg., "H/V" to flip horizontally/vertically<br><br>
                     Plus, our search bar makes it easier than ever to find your favorite designs. <br><br>
                     Thank you for supporting Byteon Wallpapers—your feedback and donations help us keep creating and sharing high-quality, free wallpapers for everyone!
                     <br><br>
@@ -133,16 +133,16 @@
                 <h2 style="text-align: center; color: #461285; font-size: 3.1rem; margin-top: 50px;">
                     <i>Support us by donating</i>
                 </h2>
-                <p style="text-align: center; color: #29004180; font-size: 24px; margin-top: 20px;">If you like our wallpapers, consider supporting us by donating.</p>
-                <p style="text-align: center; color: #2900413b; font-size: 20px; margin-top: 20px; padding-left: 100px; padding-right: 100px;"><b>NOTE:</b> Donations are not required, but they help us to keep creating more content.</p>
+                <p style="text-align: center; color: #29004196; font-size: 24px; margin-top: 20px;">If you like our wallpapers, consider supporting us by donating.</p>
+                <p style="text-align: center; color: #29004170; font-size: 20px; margin-top: 20px; padding-left: 100px; padding-right: 100px;"><b style="color: #29004170;">NOTE:</b> Donations are not required, but they help us to keep creating more content.</p>
                 <button class="btn-1">
-                    <a href="https://www.buymeacoffee.com/byteon" target="_blank">Donate via Buy Me A Coffee</a>
+                    <a href="https://buymeacoffee.com/byteon" target="_blank">Donate via Buy Me A Coffee</a>
                 </button>
             </div>
         </div>
     </div>
     <div class="footer">
-        <b>Current version: 1.1051</b>
+        <b>Current version: 1.100-5.1</b>
         <br style="margin: 5px;">
         Made with ❤️ by Byteon Team
     </div>
@@ -557,6 +557,173 @@
             flex-direction: column;
             align-items: center;
         }
+    }
+
+    @media (max-width: 480px) {
+        .header {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header img {
+            width: 120px;
+        }
+
+        header a {
+            font-size: 20px;
+        }
+
+        .wallpapers {
+            padding: 20px;
+        }
+
+        .thm {
+            flex: 1 1 100%;
+            margin: 10px;
+            max-width: 90vw;
+        }
+
+        .guide, .donate-us {
+            width: 90vw;
+            padding: 20px;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    #authModal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+    }
+
+    #authModal .modal-content {
+        background: #fff;
+        color: #222;
+        border-radius: 12px;
+        padding: 32px 24px;
+        min-width: 320px;
+        max-width: 90vw;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    #authModal h2 {
+        margin: 0 0 16px;
+        font-size: 24px;
+        color: #461285;
+    }
+
+    #authModal p {
+        margin: 0 0 24px;
+        font-size: 16px;
+        color: #555;
+    }
+
+    #authModal input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    #authModal button {
+        background: #6e16da;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    #authModal button:hover {
+        background: #a00aff;
+        transition: background-color 0.3s ease;
+    }
+
+    #authModal .close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-size: 24px;
+        color: #aaa;
+        cursor: pointer;
+    }
+
+    #authModal .close:hover {
+        color: #666;
+        transition: color 0.3s ease;
+    }
+
+    #authModal .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    #authModal .success {
+        color: green;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    #authModal .loading {
+        display: none;
+        font-size: 16px;
+        color: #6e16da;
+        margin-top: 16px;
+    }
+
+    #authModal .loading.show {
+        display: block;
+    }
+
+    #authModal .auth-links {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+    }
+
+    #authModal .auth-links a {
+        color: #6e16da;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    #authModal .auth-links a:hover {
+        text-decoration: underline;
+        transition: text-decoration 0.3s ease;
+    }
+
+    #authModal .auth-links a:visited {
+        color: #461285;
+    }
+
+    #authModal .auth-links a:active {
+        color: #290041;
+    }
+
+    #authModal .auth-links a.disabled {
+        color: #aaa;
+        pointer-events: none;
+        cursor: not-allowed;
     }
 </style>
 
@@ -1063,6 +1230,30 @@
             if (e.key === "Escape") {
                 if (modal.style.display === "flex") hideAuthModal();
                 if (zoomModal.style.display === "flex") hideZoomModal();
+            }
+            // Ctrl+Alt+H: hide/show MOTD
+            if (e.key.toLowerCase() === "h" && e.ctrlKey && e.altKey && !e.metaKey && !e.shiftKey) {
+                const motd = document.querySelector('.motd');
+                if (motd) {
+                    const toggleBtn = document.querySelector('.motd-toggle-btn');
+                    if (toggleBtn) toggleBtn.click();
+                }
+            }   
+            // Ctrl+Alt+S: scroll to top
+            if (e.key.toLowerCase() === "s" && e.ctrlKey && e.altKey && !e.metaKey && !e.shiftKey) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+            // Ctrl+Alt+G: scroll to guide
+            if (e.key.toLowerCase() === "g" && e.ctrlKey && e.altKey && !e.metaKey && !e.shiftKey) {
+                document.getElementById("guide").scrollIntoView({ behavior: "smooth" });
+            }
+            // Ctrl+Alt+W: scroll to wallpapers
+            if (e.key.toLowerCase() === "w" && e.ctrlKey && e.altKey && !e.metaKey && !e.shiftKey) {
+                document.getElementById("wallpapers").scrollIntoView({ behavior: "smooth" });
+            }
+            // Ctrl+Alt+D: scroll to donation section
+            if (e.key.toLowerCase() === "d" && e.ctrlKey && e.altKey && !e.metaKey && !e.shiftKey) {
+                document.getElementById("donate-us").scrollIntoView({ behavior: "smooth" });
             }
         });
 
