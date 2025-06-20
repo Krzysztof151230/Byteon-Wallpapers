@@ -19,6 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="icon" href="logo-2.png" type="image/x-icon">
     <link rel="image_src" href="logo.png">
+    <link rel="stylesheet" href="https://byteonwallpapers-31b0.restdb.io/static/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js"></script>
 </head>
 <body>
     <nav>
@@ -48,12 +51,10 @@
                 </button>
                 <div style="background: #f0e1ff; border-left: 10px solid #6e16da; border-radius: 16px; padding: 32px 48px; margin: 48px auto; max-width: 1000px; box-shadow: 0 4px 16px rgba(132,0,255,0.12); font-size: 1.6rem; color: #461285; line-height: 1.7;" class="motd">
                     <b style="font-size: 2.2rem;">Message of the Day:</b><br><br>
-                    <span style="font-size: 2.7rem;"><b> 🚀 Byteon Wallpapers 1.400 is here!</b></span> <br><br>
-                    We’re excited to announce the release of <b>Byteon Wallpapers 1.400</b>, bringing you a smoother, more enjoyable browsing and zooming experience thanks to several bug fixes and performance improvements.<br><br>
-                    The brand new <span style="color:#6e16da;">Language Mix</span> collection is now available, featuring 12 vibrant color options across 2 unique themes, so you can personalize your desktop like never before.<br><br>
-                    We’ve also completely revamped the website’s design for a more modern, glassy look and improved usability. Searching, previewing, and downloading wallpapers is now easier and more intuitive.<br><br>
-                    And, of course, a new AI Helper's ready to help you! Just give him a question, he'll answer right away!<br><br>
-                    The random wallpaper spotlight feature is our favorite yet! The spotlight chooses a random wallpaper collection and recommends it to you! The spotlight appears each minute in a bottom-left corner.<br><br>
+                    <span style="font-size: 2.7rem;"><b> ☀️ Say "Hello!" to improved features</b></span> <br><br>
+                    We’re excited to announce some improvements, that we've been working on.<br><br>
+                    The Log In feature is now powered and improved by <a href="https://console.firebase.google.com/"><img src="firebase-logo.png" style="height: 21px; top: 30px;"><img src="firebase-logo-2.svg" style="height: 20px; bottom: 10px; padding-left: 10px;"></a> to provide a more seamless experience.<br><br>
+                    We’ve also improved our AI Helper: we've added 100+ more  replies and revamped the design.<br><br>
                     Thank you for choosing Byteon Wallpapers! Your feedback and ongoing support inspire us to keep creating and improving. If you have suggestions or run into any issues, please don’t hesitate to <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJZdBXHXnwgHmBprMhlKchRHlhgZQfNRcVGRDRjFlwBRjsDbcxCccvCDcHwcQKBPGhmVjFL" style="color:#a00aff;text-decoration:underline;">contact us</a>.<br><br>
                     Stay tuned for more updates, new wallpaper collections, and exciting features coming soon! 🎨✨<br><br>
                     With gratitude,<br>
@@ -68,7 +69,7 @@
                     <img src="thm-4.png" alt="Layered Glow Wallpaper" style="height: 100%; max-height: 300px; margin: 0%; padding: 0%; padding-top: 50px; padding-bottom: 25px;">
                     <div class="btn">
                         <button style="margin: 25px;">
-                        <a href="https://drive.google.com/file/d/1e1155dOmmVklfOvVlGr1K7kBJSknJsU_/view?usp=sharing">Download via Google Drive <i class="fa-brands fa-google-drive"></i></a>
+                        <a href="https://drive.google.com/file/d/1e1155dOmmVklfOvVlGr1K7kBJSknJsU_/view?usp=sharing">Download <i class="fa-brands fa-google-drive"></i></a>
                     </button>
                     </div>
                 </div>
@@ -78,7 +79,7 @@
                     <img src="thm-3.png" alt="ByteArc Wallpaper" style="height: 100%; max-height: 300px; margin: 0; padding: 0; padding-top: 50px; padding-bottom: 25px;">
                     <div class="btn">
                         <button style="margin: 25px;">
-                            <a href="https://drive.google.com/file/d/1e1155dOmmVklfOvVlGr1K7kBJSknJsU_/view?usp=sharing" target="_blank">Download via Google Drive <i class="fa-brands fa-google-drive"></i></a>
+                            <a href="https://drive.google.com/file/d/1e1155dOmmVklfOvVlGr1K7kBJSknJsU_/view?usp=sharing" target="_blank">Download <i class="fa-brands fa-google-drive"></i></a>
                         </button>
                     </div>
                 </div>
@@ -88,7 +89,7 @@
                     <img src="thm-2.png" alt="Layered Glow Wallpaper" style="height: 100%; max-height: 300px; margin: 0; padding: 0; padding-top: 50px; padding-bottom: 25px;">
                     <div class="btn">
                         <button style="margin: 25px;">
-                            <a href="https://drive.google.com/file/d/149MCaWhR8b20qE2nLPKB5bEnnKI_5wr9/view?usp=sharing" target="_blank">Download via Google Drive <i class="fa-brands fa-google-drive"></i></a>
+                            <a href="https://drive.google.com/file/d/149MCaWhR8b20qE2nLPKB5bEnnKI_5wr9/view?usp=sharing" target="_blank">Download <i class="fa-brands fa-google-drive"></i></a>
                         </button>
                     </div>
                 </div>
@@ -98,7 +99,7 @@
                     <img src="thm-1.png" alt="Geometric Abstraction Wallpaper" style="height: 100%; max-height: 300px; margin: 0; padding: 0; padding-top: 50px; padding-bottom: 25px;">
                     <div class="btn">
                         <button style="margin: 25px; margin-bottom: 5px;">
-                            <a href="https://drive.google.com/file/d/1iOhOQEpdLLGZremA-_m7QqhL_-tx9i8U/view?usp=sharing" target="_blank">Download via Google Drive <i class="fa-brands fa-google-drive"></i></a>
+                            <a href="https://drive.google.com/file/d/1iOhOQEpdLLGZremA-_m7QqhL_-tx9i8U/view?usp=sharing" target="_blank">Download <i class="fa-brands fa-google-drive"></i></a>
                         </button>
                     </div>
                 </div>
@@ -796,11 +797,36 @@
     }   
 </style>
 
-<script>
+<script type="module">
     /**
      * Byteon Wallpapers - Enhanced Script (2025, rewritten)
      * Features: ScrollMagic animation, glassy scroll-to-top, search, zoom modal, tooltips, keyboard shortcuts, MOTD toggle, mobile block.
      */
+
+    // --- Download .zip file directly when clicking Download button ---
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".wallpapers .btn a").forEach(function (a) {
+            a.addEventListener("click", function (e) {
+                // Only intercept if the link is a Google Drive "view" link
+                const href = a.getAttribute("href");
+                const match = href && href.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+                if (match) {
+                    e.preventDefault();
+                    // Construct direct download link with confirm parameter to bypass virus scan warning
+                    const fileId = match[1];
+                    const directUrl = "https://drive.google.com/uc?export=download&confirm=t&id=" + fileId;
+                    // Start download
+                    const link = document.createElement("a");
+                    link.href = directUrl;
+                    link.download = "";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+            });
+        });
+    });
+    
     document.addEventListener("DOMContentLoaded", function () {
         // --- ScrollMagic Animation for Wallpaper Cards ---
         function loadScript(src, cb) {
@@ -839,7 +865,7 @@
         Object.assign(scrollTopButton.style, {
             display: "none",
             position: "fixed",
-            bottom: "20px",
+            bottom: "30px",
             right: "30px",
             zIndex: 99,
             fontSize: "18px",
@@ -1058,7 +1084,7 @@
             if (e.key === "Enter") filterWallpapers();
         });
 
-        // --- Glassy Auth Modal (Login/Signup) with Avatar Upload ---
+        // --- Glassy Auth Modal (Login/Signup) with Avatar Upload + Firebase Auth ---
         const authModal = document.createElement("div");
         authModal.id = "authModal";
         Object.assign(authModal.style, {
@@ -1114,10 +1140,10 @@
             text-align:center;
             ">Log In</h2>
             <form id="authForm" style="width:100%;max-width:340px;display:flex;flex-direction:column;gap:14px;">
-            <input type="text" id="authUsername" placeholder="Username" autocomplete="username" required style="display:none;">
+            <input type="text" id="authUsername" placeholder="Username" autocomplete="username" style="display:none;">
             <input type="email" id="authEmail" placeholder="Email" autocomplete="email" required>
             <input type="password" id="authPassword" placeholder="Password" autocomplete="current-password" required>
-            <input type="password" id="authConfirmPassword" placeholder="Confirm Password" autocomplete="new-password" required style="display:none;">
+            <input type="password" id="authConfirmPassword" placeholder="Confirm Password" autocomplete="new-password" style="display:none;">
             <div id="avatarUploadContainer" style="display:none;flex-direction:column;align-items:center;gap:8px;">
             <label for="authAvatar" style="font-size:1rem;color:#6e16da;font-weight:600;cursor:pointer;">
             <span style="display:block;margin-bottom:4px;">Avatar (optional)</span>
@@ -1251,6 +1277,14 @@
             authUsername.style.display = signUp ? "" : "none";
             authConfirmPassword.style.display = signUp ? "" : "none";
             avatarUploadContainer.style.display = signUp ? "flex" : "none";
+            // Set required attribute only in sign up mode
+            if (signUp) {
+            authUsername.setAttribute("required", "required");
+            authConfirmPassword.setAttribute("required", "required");
+            } else {
+            authUsername.removeAttribute("required");
+            authConfirmPassword.removeAttribute("required");
+            }
             authEmail.focus();
         }
         function hideAuthModal() {
@@ -1267,127 +1301,157 @@
             if (!focusEls.length) return;
             const first = focusEls[0], last = focusEls[focusEls.length-1];
             if (e.shiftKey) {
-            if (document.activeElement === first) { last.focus(); e.preventDefault(); }
+                if (document.activeElement === first) { last.focus(); e.preventDefault(); }
             } else {
-            if (document.activeElement === last) { first.focus(); e.preventDefault(); }
+                if (document.activeElement === last) { first.focus(); e.preventDefault(); }
             }
             }
         });
 
         // Show modal on button click
         const logInBtn = document.querySelector(".log-in-button");
-        logInBtn.onclick = () => showAuthModal(false);
+        if (logInBtn) {
+            logInBtn.onclick = () => showAuthModal(false);
+        }
 
-        // LocalStorage user system
-        function getUsers() { return JSON.parse(localStorage.getItem("users") || "{}"); }
-        function setUsers(users) { localStorage.setItem("users", JSON.stringify(users)); }
-        function setCurrentUser(email) { localStorage.setItem("currentUser", email); }
-        function getCurrentUser() { return localStorage.getItem("currentUser"); }
-        function clearCurrentUser() { localStorage.removeItem("currentUser"); }
+        // --- Firebase Auth (Modular v9+) ---
+        // Uses the 'auth' object from your Firebase initialization
+        // Avatar is stored in localStorage only (not uploaded to Firebase Storage)
+        function setCurrentUser(email, displayName, avatar) {
+            localStorage.setItem("currentUser", email || "");
+            localStorage.setItem("currentUserName", displayName || "");
+            localStorage.setItem("currentUserAvatar", avatar || "");
+        }
+        function getCurrentUser() {
+            return localStorage.getItem("currentUser") || "";
+        }
+        function getCurrentUserName() {
+            return localStorage.getItem("currentUserName") || "";
+        }
+        function getCurrentUserAvatar() {
+            return localStorage.getItem("currentUserAvatar") || "";
+        }
+        function clearCurrentUser() {
+            localStorage.removeItem("currentUser");
+            localStorage.removeItem("currentUserName");
+            localStorage.removeItem("currentUserAvatar");
+        }
 
-        authForm.onsubmit = function (e) {
+        // --- Auth Form Submit ---
+        authForm.onsubmit = async function (e) {
             e.preventDefault();
             const email = authEmail.value.trim().toLowerCase();
             const password = authPassword.value.trim();
-            const users = getUsers();
             if (isSignUpMode) {
                 const username = authUsername.value.trim();
                 const confirmPassword = authConfirmPassword.value.trim();
                 if (!username) return authError.textContent = "Username is required.";
-                if (users[email]) return authError.textContent = "Account already exists.";
                 if (password.length < 4) return authError.textContent = "Password must be at least 4 characters.";
                 if (password !== confirmPassword) return authError.textContent = "Passwords do not match.";
-                // Save avatarDataUrl if present
-                users[email] = { password, username, avatar: avatarDataUrl || "" };
-                setUsers(users);
-                setCurrentUser(email);
-                hideAuthModal();
-                updateAuthUI();
-                showToast("Signed up and logged in!", 2000);
-
-                // Try to trigger browser password save prompt
+                authError.textContent = "Signing up...";
                 try {
-                    // Create a hidden form and submit it to a dummy endpoint to trigger the browser's password manager
-                    const tempForm = document.createElement('form');
-                    tempForm.style.display = 'none';
-                    tempForm.method = 'POST';
-                    tempForm.action = '/dummy-auth-endpoint'; // This endpoint does not need to exist
-                    const emailInput = document.createElement('input');
-                    emailInput.type = 'email';
-                    emailInput.name = 'email';
-                    emailInput.value = email;
-                    emailInput.autocomplete = 'username';
-                    const passInput = document.createElement('input');
-                    passInput.type = 'password';
-                    passInput.name = 'password';
-                    passInput.value = password;
-                    passInput.autocomplete = 'new-password';
-                    tempForm.appendChild(emailInput);
-                    tempForm.appendChild(passInput);
-                    document.body.appendChild(tempForm);
-                    tempForm.submit();
-                    setTimeout(() => document.body.removeChild(tempForm), 1000);
+                    // Firebase create user (modular)
+                    const { createUserWithEmailAndPassword, updateProfile } = window.firebaseAuthExports;
+                    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                    // Set displayName and avatar (avatar only in localStorage)
+                    await updateProfile(userCredential.user, {
+                        displayName: username,
+                        photoURL: avatarDataUrl || ""
+                    });
+                    setCurrentUser(email, username, avatarDataUrl || "");
+                    hideAuthModal();
+                    updateAuthUI();
+                    showToast("Signed up and logged in!", 2000);
                 } catch (err) {
-                    // fallback
-                    promptSavePassword(email, password);
+                    if (err.code === "auth/email-already-in-use") {
+                        authError.textContent = "Account already exists.";
+                    } else {
+                        authError.textContent = "Sign up failed. Try again.";
+                    }
                 }
             } else {
-                if (!users[email] || users[email].password !== password)
-                    return authError.textContent = "Invalid email or password.";
-                if (!users[email].username) {
-                    users[email].username = email.split("@")[0];
-                    setUsers(users);
+                authError.textContent = "Logging in...";
+                try {
+                    // Firebase sign in (modular)
+                    const { signInWithEmailAndPassword } = window.firebaseAuthExports;
+                    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                    const user = userCredential.user;
+                    setCurrentUser(user.email, user.displayName || "", user.photoURL || "");
+                    hideAuthModal();
+                    updateAuthUI();
+                    showToast("Logged in!", 1800);
+                } catch (err) {
+                    authError.textContent = "Invalid email or password.";
                 }
-                setCurrentUser(email);
-                hideAuthModal();
-                updateAuthUI();
-                showToast("Logged in!", 1800);
             }
         };
 
-        function updateAuthUI() {
+        // --- Update Auth UI ---
+        async function updateAuthUI() {
             const currentUser = getCurrentUser();
-            const users = getUsers();
+            if (!logInBtn) return;
             if (currentUser) {
-            const username = users[currentUser]?.username || currentUser;
-            const avatar = users[currentUser]?.avatar;
-            logInBtn.textContent = "Log Out";
-            logInBtn.onclick = function () {
-            clearCurrentUser();
-            updateAuthUI();
-            showToast("Logged out.", 1500);
-            };
-            logInBtn.title = "Logged in as " + username;
-            logInBtn.style.background = "rgba(110,22,218,0.18)";
-            logInBtn.style.color = "#fff";
-            // Show avatar next to button if available
-            if (avatar) {
-            if (!logInBtn._avatarImg) {
-            const img = document.createElement("img");
-            img.style.width = "28px";
-            img.style.height = "28px";
-            img.style.borderRadius = "50%";
-            img.style.objectFit = "cover";
-            img.style.marginLeft = "10px";
-            img.style.verticalAlign = "middle";
-            logInBtn.parentNode.insertBefore(img, logInBtn.nextSibling);
-            logInBtn._avatarImg = img;
-            }
-            logInBtn._avatarImg.src = avatar;
-            logInBtn._avatarImg.style.display = "";
-            } else if (logInBtn._avatarImg) {
-            logInBtn._avatarImg.style.display = "none";
-            }
+                // Get user info from Firebase (modular)
+                const user = auth.currentUser;
+                let username = getCurrentUserName();
+                let avatar = getCurrentUserAvatar();
+                if (user) {
+                    username = user.displayName || user.email;
+                    avatar = user.photoURL || "";
+                    setCurrentUser(user.email, username, avatar);
+                }
+                logInBtn.textContent = "Log Out";
+                logInBtn.onclick = function () {
+                    const { signOut } = window.firebaseAuthExports;
+                    signOut(auth).then(() => {
+                        clearCurrentUser();
+                        updateAuthUI();
+                        showToast("Logged out.", 1500);
+                    });
+                };
+                logInBtn.title = "Logged in as " + username;
+                logInBtn.style.background = "rgba(110,22,218,0.18)";
+                logInBtn.style.color = "#fff";
+                // Show avatar next to button if available
+                if (avatar) {
+                    if (!logInBtn._avatarImg) {
+                        const img = document.createElement("img");
+                        img.style.width = "28px";
+                        img.style.height = "28px";
+                        img.style.borderRadius = "50%";
+                        img.style.objectFit = "cover";
+                        img.style.marginLeft = "10px";
+                        img.style.verticalAlign = "middle";
+                        logInBtn.parentNode.insertBefore(img, logInBtn.nextSibling);
+                        logInBtn._avatarImg = img;
+                    }
+                    logInBtn._avatarImg.src = avatar;
+                    logInBtn._avatarImg.style.display = "";
+                } else if (logInBtn._avatarImg) {
+                    logInBtn._avatarImg.style.display = "none";
+                }
             } else {
-            logInBtn.textContent = "Log In / Sign In";
-            logInBtn.onclick = () => showAuthModal(false);
-            logInBtn.title = "";
-            logInBtn.style.background = "";
-            logInBtn.style.color = "";
-            if (logInBtn._avatarImg) logInBtn._avatarImg.style.display = "none";
+                logInBtn.textContent = "Log In";
+                logInBtn.onclick = () => showAuthModal(false);
+                logInBtn.title = "";
+                logInBtn.style.background = "";
+                logInBtn.style.color = "";
+                if (logInBtn._avatarImg) logInBtn._avatarImg.style.display = "none";
             }
         }
+
+        // Try to update UI on load and on Firebase auth state change
         updateAuthUI();
+        if (window.firebaseAuthExports && window.firebaseAuthExports.onAuthStateChanged) {
+            window.firebaseAuthExports.onAuthStateChanged(auth, function(user) {
+                if (user) {
+                    setCurrentUser(user.email, user.displayName || "", user.photoURL || "");
+                } else {
+                    clearCurrentUser();
+                }
+                updateAuthUI();
+            });
+        }
 
 
         // --- Image Zoom Modal ---
@@ -1902,404 +1966,315 @@
         }
     })();
 
-    /**
-     * Random Wallpaper Spotlight
-     * Shows a random wallpaper card in a floating glassy box every 60 seconds.
-     */
-    (function randomWallpaperSpotlight() {
-        const wallpapers = Array.from(document.querySelectorAll(".wallpapers .thm"));
-        if (!wallpapers.length) return;
-        // Create floating glassy card
-        const spotlight = document.createElement("div");
-        Object.assign(spotlight.style, {
-            position: "fixed",
-            bottom: "32px",
-            right: "32px",
-            zIndex: 9998,
-            background: "rgba(255,255,255,0.38)",
-            borderRadius: "22px",
-            boxShadow: "0 8px 32px rgba(110,22,218,0.13), 0 2px 8px rgba(0,0,0,0.08)",
-            backdropFilter: "blur(18px)",
-            WebkitBackdropFilter: "blur(18px)",
-            border: "1.5px solid #e6d6ff",
-            padding: "24px 32px",
-            minWidth: "260px",
-            maxWidth: "340px",
-            display: "none",
-            alignItems: "center",
-            transition: "opacity 0.4s, transform 0.4s",
-            opacity: "0",
-            cursor: "pointer"
-        });
-        spotlight.innerHTML = `
-            <div style="display:flex;align-items:center;gap:18px;">
-                <img id="spotlightImg" src="" alt="Spotlight Wallpaper" style="width:72px;height:72px;border-radius:16px;object-fit:cover;box-shadow:0 2px 8px rgba(110,22,218,0.10);border:1.5px solid #e6d6ff;">
-                <div>
-                    <div id="spotlightTitle" style="font-size:1.15rem;font-weight:700;color:#6e16da;margin-bottom:4px;"></div>
-                    <div id="spotlightDesc" style="font-size:1rem;color:#461285b0;"></div>
-                    <button id="spotlightViewBtn" style="margin-top:10px;padding:7px 18px;background:rgba(110,22,218,0.18);color:#fff;border:none;border-radius:10px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(132,0,255,0.10);transition:background 0.2s;">View</button>
-                </div>
-            </div>
-            <button id="spotlightCloseBtn" title="Close" style="position:absolute;top:10px;right:14px;background:rgba(255,255,255,0.22);border:none;color:#6e16da;font-size:22px;cursor:pointer;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;">&times;</button>
-        `;
-        document.body.appendChild(spotlight);
+    // --- Firebase Initialization (Module) ---
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js";
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        signOut,
+        updateProfile,
+        onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
 
-        function pickRandomWallpaper() {
-            const idx = Math.floor(Math.random() * wallpapers.length);
-            const thm = wallpapers[idx];
-            const img = thm.querySelector("img");
-            const title = thm.querySelector("h2")?.textContent || "Wallpaper";
-            const desc = thm.querySelector("p")?.textContent || "";
-            return { imgSrc: img?.src, imgAlt: img?.alt, title, desc, thm };
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyALwzbz4Qsn3lGE1Q1Rv9vSlvREGPoR94g",
+        authDomain: "byteon-wallpapers.firebaseapp.com",
+        projectId: "byteon-wallpapers",
+        storageBucket: "byteon-wallpapers.firebasestorage.app",
+        messagingSenderId: "3655266022",
+        appId: "1:3655266022:web:ccf220e3a5b4ecca269527",
+        measurementId: "G-18VZNN329N"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
+
+    // Expose auth and methods to window for use in inline scripts
+    window.auth = auth;
+    window.firebaseAuthExports = {
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        signOut,
+        updateProfile,
+        onAuthStateChanged
+    };
+
+    // --- Click Sound Effect ---
+    (function clickSoundEffect() {
+        const clickAudio = new Audio("click.wav");
+        let unlocked = false;
+        function playClick() {
+            if (!unlocked) return;
+            try {
+                clickAudio.currentTime = 0;
+                clickAudio.play();
+            } catch (e) {}
         }
-
-        function showSpotlight() {
-            const { imgSrc, imgAlt, title, desc, thm } = pickRandomWallpaper();
-            spotlight.querySelector("#spotlightImg").src = imgSrc;
-            spotlight.querySelector("#spotlightImg").alt = imgAlt;
-            spotlight.querySelector("#spotlightTitle").textContent = title;
-            spotlight.querySelector("#spotlightDesc").textContent = desc;
-            spotlight.style.display = "flex";
-            setTimeout(() => {
-                spotlight.style.opacity = "1";
-                spotlight.style.transform = "translateY(0)";
-            }, 10);
-
-            // View button: scroll to wallpaper and zoom
-            spotlight.querySelector("#spotlightViewBtn").onclick = function(e) {
-                e.stopPropagation();
-                thm.scrollIntoView({ behavior: "smooth", block: "center" });
-                setTimeout(() => {
-                    const img = thm.querySelector("img");
-                    if (img) img.click();
-                }, 600);
-                hideSpotlight();
-            };
+        function unlockAudio() {
+            if (!unlocked) {
+                clickAudio.play().then(() => {
+                    clickAudio.pause();
+                    clickAudio.currentTime = 0;
+                    unlocked = true;
+                }).catch(() => {});
+            }
         }
+        window.addEventListener("pointerdown", unlockAudio, { once: true });
 
-        function hideSpotlight() {
-            spotlight.style.opacity = "0";
-            setTimeout(() => { spotlight.style.display = "none"; }, 400);
-        }
+        document.addEventListener("click", function(e) {
+            const t = e.target;
+            if (t.closest("button") || t.closest("a")) playClick();
+        }, true);
 
-        // Close button
-        spotlight.querySelector("#spotlightCloseBtn").onclick = function(e) {
-            e.stopPropagation();
-            hideSpotlight();
-        };
-
-        // Clicking the card also scrolls to wallpaper
-        spotlight.onclick = function(e) {
-            if (e.target.id === "spotlightCloseBtn" || e.target.id === "spotlightViewBtn") return;
-            const title = spotlight.querySelector("#spotlightTitle").textContent;
-            const thm = Array.from(document.querySelectorAll(".wallpapers .thm")).find(t => t.querySelector("h2")?.textContent === title);
-            if (thm) thm.scrollIntoView({ behavior: "smooth", block: "center" });
-            hideSpotlight();
-        };
-
-        // Show spotlight every 60 seconds
-        setInterval(showSpotlight, 60000);
-        // Show once after 10 seconds
-        setTimeout(showSpotlight, 10000);
+        document.addEventListener("focusin", function(e) {
+            if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") playClick();
+        }, true);
     })();
 
-    /**
-     * Byteon Wallpapers AI Helper (2024)
-     * Adds a floating AI chat helper for user questions.
-     */
-    (function aiHelper() {
-        // --- Styles ---
-        const aiCSS = `
-        .ai-helper-fab {
-            position: fixed;
-            bottom: 32px;
-            left: 32px;
-            z-index: 9999;
-            background: linear-gradient(135deg,#6e16da 60%,#a00aff 100%);
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 64px;
-            height: 64px;
-            box-shadow: 0 4px 16px rgba(110,22,218,0.18);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            cursor: pointer;
-            transition: background 0.2s, box-shadow 0.2s, transform 0.18s;
-            outline: none;
-        }
-        .ai-helper-fab:hover {
-            background: linear-gradient(135deg,#a00aff 60%,#6e16da 100%);
-            box-shadow: 0 8px 32px rgba(110,22,218,0.28);
-            transform: scale(1.08);
-        }
-        .ai-helper-modal {
-            position: fixed;
-            bottom: 110px;
-            left: 32px;
-            z-index: 10000;
-            background: rgba(255,255,255,0.98);
-            border-radius: 22px;
-            box-shadow: 0 8px 32px rgba(110,22,218,0.13), 0 2px 8px rgba(0,0,0,0.08);
-            border: 1.5px solid #e6d6ff;
-            width: 340px;
-            max-width: 95vw;
-            min-height: 180px;
-            display: none;
-            flex-direction: column;
-            animation: fadeIn 0.4s;
-            font-family: 'Figtree',sans-serif;
-        }
-        .ai-helper-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 22px 8px 22px;
-            border-bottom: 1px solid #e6d6ff;
-        }
-        .ai-helper-header span {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #6e16da;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .ai-helper-close {
-            background: none;
-            border: none;
-            color: #a00aff;
-            font-size: 1.6rem;
-            cursor: pointer;
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s, color 0.2s;
-        }
-        .ai-helper-close:hover {
-            background: #f0e1ff;
-            color: #6e16da;
-        }
-        .ai-helper-body {
-            padding: 16px 22px 0 22px;
-            font-size: 1.08rem;
-            color: #461285;
-            min-height: 60px;
-            max-height: 220px;
-            overflow-y: auto;
-        }
-        .ai-helper-input-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 18px 22px 18px 22px;
-            border-top: 1px solid #e6d6ff;
-            background: rgba(255,255,255,0.22);
-            border-radius: 0 0 22px 22px;
-        }
-        .ai-helper-input {
-            flex: 1;
-            padding: 10px 14px;
-            border-radius: 10px;
-            border: 1.5px solid #e6d6ff;
-            font-size: 1rem;
-            outline: none;
-            background: rgba(255,255,255,0.22);
-            color: #461285;
-            font-weight: 500;
-            transition: background 0.2s, box-shadow 0.2s;
-        }
-        .ai-helper-input:focus {
-            background: rgba(255,255,255,0.38);
-            box-shadow: 0 2px 8px rgba(110,22,218,0.10);
-        }
-        .ai-helper-send {
-            background: linear-gradient(135deg,#6e16da 60%,#a00aff 100%);
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            padding: 10px 18px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
-        }
-        .ai-helper-send:hover {
-            background: linear-gradient(135deg,#a00aff 60%,#6e16da 100%);
-            color: #fff;
-        }
-        .ai-helper-msg-user {
-            margin: 8px 0;
-            text-align: right;
-            color: #a00aff;
-            font-weight: 600;
-        }
-        .ai-helper-msg-ai {
-            margin: 8px 0;
-            text-align: left;
-            color: #461285;
-            font-weight: 500;
-        }
-        .ai-helper-loading {
-            color: #6e16da;
-            font-style: italic;
-            font-size: 1.05rem;
-            margin: 8px 0;
-        }
-        `;
-        const aiStyle = document.createElement("style");
-        aiStyle.textContent = aiCSS;
-        document.head.appendChild(aiStyle);
+    // --- AI Helper (Glassy Chatbot Widget) ---
+    (function aiHelperWidget() {
+        // Create floating button
+        const aiBtn = document.createElement("button");
+        aiBtn.id = "aiHelperBtn";
+        aiBtn.title = "Ask AI Helper";
+        aiBtn.innerHTML = '<i class="fa-solid fa-robot"></i> AI Helper';
+        Object.assign(aiBtn.style, {
+            position: "fixed",
+            bottom: "30px",
+            left: "30px",
+            zIndex: 3002,
+            background: "rgba(110,22,218,0.18)",
+            color: "#fff",
+            border: "1.5px solid #e6d6ff",
+            borderRadius: "16px",
+            boxShadow: "0 4px 16px rgba(132,0,255,0.10)",
+            padding: "16px 28px",
+            fontSize: "1.2rem",
+            fontWeight: "700",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+            transition: "background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.18s"
+        });
+        aiBtn.onmouseover = function() {
+            aiBtn.style.background = "rgba(174,110,255,0.28)";
+            aiBtn.style.color = "#a00aff";
+            aiBtn.style.boxShadow = "0 8px 24px rgba(132,0,255,0.18)";
+            aiBtn.style.transform = "scale(1.04)";
+        };
+        aiBtn.onmouseout = function() {
+            aiBtn.style.background = "rgba(110,22,218,0.18)";
+            aiBtn.style.color = "#fff";
+            aiBtn.style.boxShadow = "0 4px 16px rgba(132,0,255,0.10)";
+            aiBtn.style.transform = "scale(1)";
+        };
+        document.body.appendChild(aiBtn);
 
-        // --- FAB Button ---
-        const fab = document.createElement("button");
-        fab.className = "ai-helper-fab";
-        fab.title = "Ask AI Helper";
-        fab.innerHTML = `<i class="fa-solid fa-robot"></i>`;
-        document.body.appendChild(fab);
-
-        // --- Modal ---
-        const modal = document.createElement("div");
-        modal.className = "ai-helper-modal";
-        modal.innerHTML = `
-            <div class="ai-helper-header">
-                <span><i class="fa-solid fa-robot"></i> AI Helper</span>
-                <button class="ai-helper-close" title="Close">&times;</button>
+        // Create chat modal
+        const chatModal = document.createElement("div");
+        chatModal.id = "aiHelperModal";
+        Object.assign(chatModal.style, {
+            position: "fixed",
+            bottom: "90px",
+            left: "30px",
+            width: "370px",
+            maxWidth: "95vw",
+            height: "480px",
+            maxHeight: "80vh",
+            background: "rgba(255,255,255,0.92)",
+            borderRadius: "22px",
+            boxShadow: "0 8px 32px rgba(110,22,218,0.18), 0 2px 8px rgba(0,0,0,0.08)",
+            border: "1.5px solid #e6d6ff",
+            display: "none",
+            flexDirection: "column",
+            zIndex: 3003,
+            overflow: "hidden",
+            backdropFilter: "blur(18px)",
+            WebkitBackdropFilter: "blur(18px)",
+            animation: "fadeIn .4s cubic-bezier(.4,0,.2,1)"
+        });
+        chatModal.innerHTML = `
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 10px 22px;background:rgba(110,22,218,0.10);border-bottom:1.5px solid #e6d6ff;">
+                <span style="font-size:1.25rem;font-weight:700;color:#461285;display:flex;align-items:center;gap:10px;">
+                    <i class="fa-solid fa-robot"></i> AI Helper
+                </span>
+                <div style="display:flex;gap:8px;">
+                    <button id="aiHelperMaximize" title="Maximize" style="background:none;border:none;font-size:0.8rem;color:#6e16da;cursor:pointer;border-radius:50%;width:32px;height:32px;transition:background 0.2s;padding-top:4px;">
+                        <i class="fa-regular fa-square"></i>
+                    </button>
+                    <button id="closeAiHelper" title="Close" style="background:none;border:none;font-size:1.7rem;color:#6e16da;cursor:pointer;border-radius:50%;width:36px;height:36px;transition:background 0.2s;">
+                        &times;
+                    </button>
+                </div>
             </div>
-            <div class="ai-helper-body">
-                <div class="ai-helper-msg-ai">Hi! 👋 I'm your AI helper. Ask me anything about Byteon Wallpapers, how to use the site, or for tips!</div>
-            </div>
-            <form class="ai-helper-input-row">
-                <input class="ai-helper-input" type="text" placeholder="Type your question..." autocomplete="off" required />
-                <button class="ai-helper-send" type="submit">Send</button>
+            <div id="aiChatHistory" style="flex:1;overflow-y:auto;padding:18px 18px 0 18px;display:flex;flex-direction:column;gap:14px;font-size:1.08rem;"></div>
+            <form id="aiChatForm" style="display:flex;align-items:center;padding:14px 18px 18px 18px;gap:8px;background:rgba(255,255,255,0.22);border-top:1.5px solid #e6d6ff;">
+                <input id="aiChatInput" type="text" placeholder="Ask me anything about Byteon Wallpapers..." autocomplete="off" style="flex:1;padding:10px 14px;font-size:1.08rem;border-radius:10px;border:1.5px solid #e6d6ff;background:rgba(255,255,255,0.22);color:#461285;font-weight:500;outline:none;">
+                <button type="submit" style="padding:10px 18px;font-size:1.08rem;border-radius:10px;border:none;background:rgba(110,22,218,0.18);color:#fff;font-weight:700;cursor:pointer;transition:background 0.2s;">Send</button>
             </form>
         `;
-        document.body.appendChild(modal);
+        document.body.appendChild(chatModal);
 
-        // --- Logic ---
-        const closeBtn = modal.querySelector(".ai-helper-close");
-        const input = modal.querySelector(".ai-helper-input");
-        const sendBtn = modal.querySelector(".ai-helper-send");
-        const body = modal.querySelector(".ai-helper-body");
-        let open = false;
+        // Maximize/minimize logic
+        let isMaximized = false;
+        const maximizeBtn = chatModal.querySelector("#aiHelperMaximize");
+        maximizeBtn.onclick = function() {
+            isMaximized = !isMaximized;
+            if (isMaximized) {
+                Object.assign(chatModal.style, {
+                    width: "min(96vw, 900px)",
+                    height: "min(96vh, 700px)",
+                    left: "50%",
+                    bottom: "50%",
+                    transform: "translate(-50%, 50%)",
+                    maxWidth: "98vw",
+                    maxHeight: "98vh",
+                    borderRadius: "28px"
+                });
+                maximizeBtn.innerHTML = '<i class="fa-regular fa-clone"></i>';
+                maximizeBtn.title = "Restore";
+            } else {
+                Object.assign(chatModal.style, {
+                    width: "370px",
+                    height: "480px",
+                    left: "30px",
+                    bottom: "90px",
+                    transform: "",
+                    maxWidth: "95vw",
+                    maxHeight: "80vh",
+                    borderRadius: "22px"
+                });
+                maximizeBtn.innerHTML = '<i class="fa-regular fa-square"></i>';
+                maximizeBtn.title = "Maximize";
+            }
+        };
 
-        function openModal() {
-            modal.style.display = "flex";
-            setTimeout(() => { modal.style.opacity = "1"; }, 10);
-            open = true;
-            input.focus();
+        // Show/hide logic
+        aiBtn.onclick = function() {
+            chatModal.style.display = chatModal.style.display === "flex" ? "none" : "flex";
+            if (chatModal.style.display === "flex") {
+                setTimeout(() => chatModal.querySelector("#aiChatInput").focus(), 100);
+            }
+        };
+        chatModal.querySelector("#closeAiHelper").onclick = function() {
+            chatModal.style.display = "none";
+        };
+
+        // Chat logic
+        const chatHistory = chatModal.querySelector("#aiChatHistory");
+        const chatForm = chatModal.querySelector("#aiChatForm");
+        const chatInput = chatModal.querySelector("#aiChatInput");
+
+        // Simple AI Helper responses (expand as needed)
+        function aiReply(userMsg) {
+            const msg = userMsg.trim().toLowerCase();
+            if (!msg) return "Please enter a question!";
+            if (msg.includes("download")) return "To download wallpapers, simply click the <b>Download</b> button located beneath your chosen wallpaper collection. This will start a direct download of a .zip file containing all the wallpapers in that collection. If you need step-by-step help, scroll down to the <b>How to download wallpapers?</b> guide below the collections for detailed instructions, including how to extract and set your new wallpaper. If you encounter any issues, feel free to contact us using the link provided in the Message of the Day.";
+            if (msg.includes("login") || msg.includes("sign in")) return "To log in or sign up, click the <b>Log In</b> button in the top right corner of the page. A glassy modal will appear where you can enter your email and password. If you don't have an account, switch to <b>Sign Up</b> mode to create one. You can also upload an avatar during sign up. Logging in allows you to personalize your experience and access more features as we add them!";
+            if (msg.includes("donate")) return "Thank you for considering a donation! Supporting us helps keep Byteon Wallpapers free and allows us to create more high-quality content. To donate, scroll down to the <b>Support us by donating</b> section and click the <b>Donate via Buy Me A Coffee</b> button. Donations are optional but greatly appreciated. Every bit helps us improve and maintain the site!";
+            if (msg.includes("wallpaper") || msg.includes("collection")) return "Our wallpaper collections are displayed above, each with a preview image, name, and details about size, themes, and color options. Click on any wallpaper image to zoom in for a closer look, or use the <b>Download</b> button to get the entire collection as a .zip file. We regularly add new collections, so check back often!";
+            if (msg.includes("ai") || msg.includes("helper")) return "I'm your <b>AI Helper</b>! You can ask me anything about Byteon Wallpapers, including how to download, use features, or get support. I can answer questions about collections, site navigation, account management, and more. Just type your question here and I'll do my best to provide a detailed answer!";
+            if (msg.includes("feature") || msg.includes("new")) return "We frequently update Byteon Wallpapers with new features and improvements. Recent updates include a smoother login experience, an improved AI Helper, a random wallpaper spotlight, and enhanced search and zoom functionality. For the latest news and upcoming features, check the <b>Message of the Day</b> at the top of the page!";
+            if (msg.includes("contact")) return "You can contact the Byteon Team for support, feedback, or suggestions. Use the <b>contact us</b> link in the Message of the Day or at the bottom of the guide section. We welcome your questions, bug reports, and ideas for new wallpapers or features!";
+            if (msg.includes("mobile") || msg.includes("phone")) return "Currently, Byteon Wallpapers is optimized for desktop browsers due to UI issues on mobile devices. If you're on a phone, you may see a message restricting access. For the best experience, please use a desktop or switch your browser to desktop mode if available.";
+            if (msg.includes("random") || msg.includes("spotlight")) return "The <b>random wallpaper spotlight</b> is a feature that recommends a different wallpaper collection every minute. Look for the spotlight in the bottom-left corner of the page. It's a great way to discover new collections you might have missed!";
+            if (msg.includes("feedback") || msg.includes("suggestion")) return "We love hearing from our users! If you have feedback or suggestions for new wallpapers, features, or improvements, please use the <b>contact us</b> link in the Message of the Day. Your input helps us make Byteon Wallpapers better for everyone.";
+            if (msg.includes("version")) return "You're using Byteon Wallpapers <b>version 1.400-64.38-15</b>. We regularly update the site with new features, collections, and bug fixes. Check the Message of the Day for a summary of recent changes and upcoming updates!";
+            if (msg.includes("who are you")) return "I'm the <b>Byteon Wallpapers AI Helper</b>, a virtual assistant designed to answer your questions about the site, its features, and how to get the most out of our wallpaper collections. Ask me anything!";
+            if (msg.includes("hello") || msg.includes("hi")) return "Hello! 👋 I'm here to help you explore Byteon Wallpapers. Ask me about downloading, features, collections, or anything else you need!";
+            if (msg.includes("how are you")) return "I'm just a helpful AI, always ready to assist you with Byteon Wallpapers. How can I help you today?";
+            if (msg.includes("thank")) return "You're very welcome! If you have more questions or need assistance, just ask. We're glad you're enjoying Byteon Wallpapers!";
+            if (msg.includes("creator") || msg.includes("who made")) return "Byteon Wallpapers is created and maintained by the <b>Byteon Team</b>, a group of passionate designers and developers dedicated to providing beautiful, free wallpapers for everyone.";
+            if (msg.includes("team")) return "The <b>Byteon Team</b> is responsible for designing, developing, and updating Byteon Wallpapers. We work hard to bring you new collections and features. You can find our social links in the header!";
+            if (msg.includes("free")) return "Yes! All wallpapers on Byteon Wallpapers are <b>100% free</b> to download and use for personal purposes. Enjoy as many as you like!";
+            if (msg.includes("license")) return "Our wallpapers are free for personal use. If you wish to use them commercially, please contact us for permission. We want to ensure fair and respectful use of our designs.";
+            if (msg.includes("4k")) return "Absolutely! Most of our wallpapers are available in <b>4K resolution (3840x2160)</b> or higher, ensuring crisp and vibrant backgrounds for any screen.";
+            if (msg.includes("resolution")) return "Our collections are primarily in <b>4K (3840x2160)</b> resolution, but some may be even higher. This ensures they look great on modern monitors and high-DPI displays.";
+            if (msg.includes("desktop")) return "Byteon Wallpapers is designed for desktop use. Download your favorite collection, extract the .zip file, and set any image as your desktop background for a fresh look!";
+            if (msg.includes("mac")) return "To use our wallpapers on a Mac, download and extract the .zip file, then right-click your chosen image and select <b>Set Desktop Picture</b>.";
+            if (msg.includes("windows")) return "On Windows, download and extract the .zip file, then right-click your chosen wallpaper and select <b>Set as desktop background</b>.";
+            if (msg.includes("linux")) return "On Linux, download and extract the .zip file, then use your desktop environment's settings to set your favorite image as the background.";
+            if (msg.includes("dark mode")) return "Many collections include both <b>dark and light</b> themed wallpapers. Check the collection descriptions for details and choose the style that fits your preference!";
+            if (msg.includes("color")) return "Our collections often feature multiple color options and themes. See the collection details for available colors and pick your favorite!";
+            if (msg.includes("zip")) return "All wallpapers are provided as <b>.zip files</b> for easy downloading. After downloading, extract the .zip to access all included wallpapers.";
+            if (msg.includes("extract")) return "After downloading a .zip file, extract it using your operating system's built-in tools or a program like WinRAR or 7-Zip. This will give you access to all the wallpapers inside.";
+            if (msg.includes("set") && msg.includes("background")) return "To set a wallpaper as your background, extract the .zip file, right-click your chosen image, and select <b>Set as desktop background</b> (Windows) or <b>Set Desktop Picture</b> (Mac).";
+            if (msg.includes("favorite")) return "We'd love to know your favorite collection! Let us know via the contact link or on our Discord. Your feedback helps us decide what to create next!";
+            if (msg.includes("update")) return "We regularly update Byteon Wallpapers with new collections, features, and improvements. Check the <b>Message of the Day</b> for the latest news and upcoming releases!";
+            if (msg.includes("bug")) return "If you find a bug or issue, please let us know using the <b>contact us</b> link in the Message of the Day. We appreciate your help in making Byteon Wallpapers better!";
+            if (msg.includes("support")) return "You can support Byteon Wallpapers by donating, sharing the site with friends, or providing feedback. Every bit of support helps us continue offering free, high-quality wallpapers!";
+            if (msg.includes("share")) return "Feel free to share Byteon Wallpapers with your friends, family, or on social media. The more people enjoy our wallpapers, the better!";
+            if (msg.includes("social")) return "Follow us on <b>YouTube</b>, <b>Discord</b>, and <b>GitHub</b> for updates, community events, and open-source projects. Links are in the header at the top of the page.";
+            if (msg.includes("avatar")) return "When signing up for an account, you can upload a custom avatar. This helps personalize your profile and makes your experience more fun!";
+            if (msg.includes("account")) return "Creating an account lets you personalize your experience and access more features as we add them. Click <b>Log In</b> in the top right to get started!";
+            if (msg.includes("sign up")) return "To sign up, click the <b>Log In</b> button, then switch to <b>Sign Up</b> mode in the modal. Fill in your details, choose an avatar if you like, and you're ready to go!";
+            if (msg.includes("log out")) return "To log out, click the <b>Log Out</b> button in the top right corner. This will securely sign you out of your account.";
+            if (msg.includes("password")) return "Keep your password secure! If you forget it, please contact us for help, as password reset is not yet available directly on the site.";
+            if (msg.includes("privacy")) return "We respect your privacy. Your data is never shared with third parties, and we use secure authentication powered by Firebase.";
+            if (msg.includes("security")) return "Your security is important to us. We use <b>Firebase Authentication</b> to keep your account safe and your data protected.";
+            if (msg.includes("analytics")) return "We use analytics to improve Byteon Wallpapers, but we do not collect or share any personal data. Your privacy is our priority.";
+            if (msg.includes("search")) return "Use the <b>search bar</b> above the wallpaper collections to quickly find wallpapers by name, theme, or keyword. Results update instantly as you type!";
+            if (msg.includes("zoom")) return "Click any wallpaper image to open a <b>zoom modal</b> where you can view it in detail, zoom in/out, rotate, flip, pan, and even download the image directly.";
+            if (msg.includes("keyboard")) return "Byteon Wallpapers supports keyboard shortcuts for accessibility and speed. For example, <b>Ctrl+F</b> focuses the search bar, <b>Alt+/</b> opens the AI Helper, and <b>Escape</b> closes modals.";
+            if (msg.includes("guide")) return "Scroll down to the <b>How to download wallpapers?</b> guide for a detailed, step-by-step walkthrough on downloading, extracting, and setting wallpapers. It's designed to help users of all experience levels!";
+            if (msg.includes("error")) return "If you encounter an error, try refreshing the page or clearing your browser cache. If the problem persists, please contact us using the link in the Message of the Day for assistance.";
+            if (msg.includes("browser")) return "For the best experience, use the latest version of <b>Chrome</b>, <b>Firefox</b>, or <b>Edge</b>. Byteon Wallpapers is also compatible with Safari and Opera, but some features may work best in Chrome or Firefox.";
+            if (msg.includes("image not loading")) return "If images aren't loading, check your internet connection and try refreshing the page. If the issue continues, let us know via the contact link so we can investigate.";
+            if (msg.includes("file too large")) return "Some wallpaper collections are large, and Google Drive may warn you about file size. You can safely continue the download—our files are safe and virus-free!";
+            if (msg.includes("google drive")) return "We use <b>Google Drive</b> to host our wallpaper collections for fast, reliable downloads. If you have trouble accessing a link, please contact us for help.";
+            if (msg.includes("safe")) return "All wallpapers are scanned and safe to download. We never include viruses or malware. If you see a warning, it's just because of the large file size.";
+            if (msg.includes("ad")) return "Byteon Wallpapers is completely <b>ad-free</b>. Enjoy browsing and downloading without interruptions!";
+            if (msg.includes("custom")) return "Have an idea for a custom wallpaper or collection? Let us know via the contact link! We're always open to new ideas and requests.";
+            if (msg.includes("open source")) return "Some Byteon projects are open source and available on our <b>GitHub</b>. Check the header for a link to our profile and see what we're working on!";
+            if (msg.includes("contribute")) return "Want to contribute to Byteon Wallpapers? Reach out via the contact link or check our GitHub for open-source projects and collaboration opportunities!";
+            if (msg.includes("api")) return "We do not currently offer a public API, but let us know if that's something you'd like to see in the future!";
+            if (msg.includes("bot")) return "I'm an AI Helper bot, here to answer your questions about Byteon Wallpapers. While I'm not a real person, I'll do my best to help you!";
+            if (msg.includes("easter egg")) return "🎉 You found an easter egg! Keep exploring Byteon Wallpapers for more surprises and hidden features!";
+            if (msg.includes("joke")) return "Why did the computer go to art school? <b>To improve its background!</b> 😄";
+            if (msg.includes("bye")) return "Goodbye! Thanks for visiting Byteon Wallpapers. Come back soon for new collections and features!";
+            // Default fallback
+            return "I'm not sure about that yet! Please ask me about downloading wallpapers, using site features, or anything related to Byteon Wallpapers. If you need help with something specific, let me know!";
         }
-        function closeModal() {
-            modal.style.opacity = "0";
-            setTimeout(() => { modal.style.display = "none"; }, 250);
-            open = false;
+
+        function appendMsg(text, sender = "user") {
+            const msgDiv = document.createElement("div");
+            msgDiv.style.alignSelf = sender === "user" ? "flex-end" : "flex-start";
+            msgDiv.style.background = sender === "user" ? "rgba(110,22,218,0.12)" : "rgba(255,255,255,0.55)";
+            msgDiv.style.color = sender === "user" ? "#6e16da" : "#461285";
+            msgDiv.style.padding = "10px 16px";
+            msgDiv.style.borderRadius = "12px";
+            msgDiv.style.maxWidth = "80%";
+            msgDiv.style.boxShadow = "0 2px 8px rgba(132,0,255,0.08)";
+            msgDiv.style.marginBottom = "2px";
+            msgDiv.textContent = text;
+            chatHistory.appendChild(msgDiv);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
         }
-        fab.onclick = openModal;
-        closeBtn.onclick = closeModal;
+
+        chatForm.onsubmit = function(e) {
+            e.preventDefault();
+            const userMsg = chatInput.value;
+            if (!userMsg.trim()) return;
+            appendMsg(userMsg, "user");
+            chatInput.value = "";
+            setTimeout(() => {
+                appendMsg(aiReply(userMsg), "ai");
+            }, 400);
+        };
 
         // Keyboard shortcut: Alt+/
         document.addEventListener("keydown", function(e) {
-            if ((e.altKey && e.key === "/") || (e.ctrlKey && e.key === "k")) {
-                e.preventDefault();
-                if (!open) openModal();
-                else closeModal();
+            if (e.altKey && e.key === "/") {
+                aiBtn.click();
             }
-            if (e.key === "Escape" && open) closeModal();
         });
-
-        // Simple AI logic (client-side, no backend)
-        function aiReply(q) {
-            q = q.trim().toLowerCase();
-            // FAQ-style responses
-            if (!q) return "Please type your question!";
-            if (q.includes("download")) return "To download wallpapers, click the 'Download via Google Drive' button under your chosen wallpaper. See the guide section for step-by-step help!";
-            if (q.includes("log in") || q.includes("sign in")) return "Click the 'Log In' button in the header. You can sign up with your email and set an avatar!";
-            if (q.includes("sign up") || q.includes("register")) return "To sign up, click the 'Log In' button and switch to Sign Up mode. Enter your email, password, and (optionally) upload an avatar.";
-            if (q.includes("log out") || q.includes("logout")) return "If you're logged in, the 'Log In' button changes to 'Log Out'. Click it to log out.";
-            if (q.includes("donate")) return "Thank you for considering a donation! Use the 'Donate via Buy Me A Coffee' button in the donation section.";
-            if (q.includes("search")) return "Use the search bar above the wallpapers to quickly find your favorite themes or colors.";
-            if (q.includes("zoom") || q.includes("preview")) return "Click any wallpaper image to open a zoom modal. You can zoom, rotate, flip, and download the preview!";
-            if (q.includes("mobile") || q.includes("phone")) return "Currently, the website is best viewed on desktop due to UI issues on mobile devices.";
-            if (q.includes("feedback") || q.includes("contact")) return "We love feedback! Email us at byteon029@gmail.com or use the links in the Message of the Day.";
-            if (q.includes("version")) return "The current version is 1.400-BETA_1. Check the Message of the Day for updates!";
-            if (q.includes("wallpaper") && q.includes("random")) return "A random wallpaper spotlight appears every minute in the bottom-right corner!";
-            if (q.includes("shortcuts") || q.includes("keyboard")) return "Try Ctrl+Alt+S (scroll top), Ctrl+Alt+G (guide), Ctrl+Alt+W (wallpapers), Ctrl+Alt+D (donate), or Alt+/ (open AI helper).";
-            if (q.includes("who are you") || q.includes("your name")) return "I'm your AI helper for Byteon Wallpapers!";
-            if (q.includes("how are you")) return "I'm just code, but I'm here to help you!";
-            if (q.includes("theme") || q.includes("collection")) return "Check out the available wallpaper collections: Language Mix, ByteArc, Layered Glow, and Geometric Abstraction!";
-            if (q.includes("avatar")) return "You can upload an avatar when signing up. Click 'Log In', switch to Sign Up, and use the avatar upload option.";
-            if (q.includes("reset password") || q.includes("forgot password")) return "Currently, password reset is not supported. Please contact us if you need help accessing your account.";
-            if (q.includes("safe") || q.includes("virus") || q.includes("security")) return "All wallpapers are safe and virus-free. Downloads are hosted on Google Drive for your security.";
-            if (q.includes("update") || q.includes("changelog") || q.includes("what's new")) return "Check the Message of the Day for the latest updates and new features!";
-            if (q.includes("language")) return "The Language Mix collection features wallpapers in 12 vibrant colors and 2 unique themes!";
-            if (q.includes("google drive") || q.includes("drive")) return "We use Google Drive for fast and secure downloads. You may need a Google account to download large files.";
-            if (q.includes("extract") || q.includes("unzip")) return "After downloading a .zip file, right-click it and choose 'Extract' to access the wallpapers inside.";
-            if (q.includes("set wallpaper") || q.includes("apply wallpaper")) return "After extracting, open your favorite wallpaper and set it as your desktop or mobile background.";
-            if (q.includes("support")) return "For support, email byteon029@gmail.com or join our Discord channel (see the header).";
-            if (q.includes("discord")) return "Join our Discord community using the link in the header for updates, support, and chat!";
-            if (q.includes("github")) return "Our GitHub profile is linked in the header. You can see our open-source projects there!";
-            if (q.includes("youtube")) return "Check out our YouTube channel for showcase videos and updates. The link is in the header.";
-            if (q.includes("motd") || q.includes("message of the day")) return "The Message of the Day (MOTD) is shown near the top and can be hidden or shown using the button next to it.";
-            if (q.includes("spotlight")) return "The random wallpaper spotlight appears every minute in the bottom-right corner, highlighting a random wallpaper.";
-            if (q.includes("pan") || q.includes("move image")) return "When zoomed in on a wallpaper, you can click and drag to pan the image.";
-            if (q.includes("rotate")) return "In the zoom modal, use the rotate button or press 'R' to rotate the wallpaper by 90°.";
-            if (q.includes("flip")) return "In the zoom modal, use the flip buttons to flip the wallpaper horizontally or vertically.";
-            if (q.includes("download image")) return "In the zoom modal, use the download button to save the previewed wallpaper.";
-            if (q.includes("privacy") || q.includes("data")) return "We store only your login info in your browser (localStorage). No data is sent to our servers.";
-            if (q.includes("browser")) return "For the best experience, use the latest version of Chrome, Firefox, Edge, or Safari on desktop.";
-            if (q.includes("file size") || q.includes("large file")) return "Some wallpaper packs are large. If Google Drive warns about size, confirm to continue downloading.";
-            if (q.includes("custom wallpaper") || q.includes("request")) return "We welcome suggestions! Email us your ideas or join our Discord to request new wallpaper themes.";
-            if (q.includes("animation") || q.includes("animated")) return "Currently, all wallpapers are static images. Animated wallpapers may be added in the future!";
-            if (q.includes("beta") || q.includes("test")) return "You're using a BETA version. Features may change and feedback is appreciated!";
-            if (q.includes("license") || q.includes("copyright")) return "Wallpapers are free for personal use. Please do not redistribute or sell them.";
-            if (q.includes("dark mode")) return "The site uses a light glassy theme. Dark mode may be added in a future update!";
-            if (q.includes("email")) return "You can contact us at byteon029@gmail.com for support, feedback, or suggestions.";
-            if (q.includes("team") || q.includes("developer") || q.includes("author")) return "Byteon Wallpapers is created by the Byteon Team. See the footer for credits!";
-            if (q.includes("update frequency") || q.includes("how often")) return "We update the site and add new wallpapers regularly. Check back often or follow us on social media!";
-            if (q.includes("error") || q.includes("problem") || q.includes("issue")) return "If you encounter any issues, please contact us or try refreshing the page.";
-            if (q.includes("localstorage") || q.includes("where is my data")) return "Your login info is stored in your browser's localStorage and never sent to our servers.";
-            if (q.includes("ai") && q.includes("helper")) return "I'm your built-in AI helper! Ask me anything about Byteon Wallpapers.";
-            if (q.includes("scroll")) return "Use the scroll-to-top button or keyboard shortcuts to quickly navigate the page.";
-            if (q.includes("show message") || q.includes("hide message")) return "Use the button next to the Message of the Day to show or hide it.";
-            if (q.includes("future") || q.includes("coming soon")) return "We're planning more collections, features, and improvements. Stay tuned!";
-            if (q.includes("hello") || q.includes("hi")) return "Hello! How can I help you today?";
-            // Fallback
-            return "Sorry, I don't have an answer for that. Try rephrasing your question or check the guide section!";
-        }
-
-        function appendMsg(msg, who = "ai") {
-            const div = document.createElement("div");
-            div.className = who === "user" ? "ai-helper-msg-user" : "ai-helper-msg-ai";
-            div.textContent = msg;
-            body.appendChild(div);
-            body.scrollTop = body.scrollHeight;
-        }
-
-        modal.querySelector(".ai-helper-input-row").onsubmit = function(e) {
-            e.preventDefault();
-            const q = input.value.trim();
-            if (!q) return;
-            appendMsg(q, "user");
-            input.value = "";
-            // Loading...
-            const loading = document.createElement("div");
-            loading.className = "ai-helper-loading";
-            loading.textContent = "Thinking...";
-            body.appendChild(loading);
-            body.scrollTop = body.scrollHeight;
-            setTimeout(() => {
-                loading.remove();
-                appendMsg(aiReply(q), "ai");
-            }, 700 + Math.random() * 400);
-        };
     })();
-
-
 </script>
 
 </html>
